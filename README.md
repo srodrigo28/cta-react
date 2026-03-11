@@ -1,4 +1,4 @@
-## CTA Cursos — Biblioteca de Componentes React ( fev/2026 )
+## CTA Cursos — Biblioteca de Componentes React/Next ( fev/2026 )
 
 ![Preview do Projeto](./preview/cta-react.png)
 
