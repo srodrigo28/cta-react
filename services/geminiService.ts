@@ -1,9 +1,14 @@
 import { GoogleGenAI } from "@google/genai";
 import { TechStack } from '../types';
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
 export const generateTechExplanation = async (tech: TechStack, customQuery?: string): Promise<string> => {
+  const apiKey = process.env.GEMINI_API_KEY || process.env.API_KEY;
+
+  if (!apiKey) {
+    return "A chave da API Gemini não foi configurada. Crie um arquivo `.env` com `GEMINI_API_KEY=sua_chave_aqui` e reinicie o servidor.";
+  }
+
+  const ai = new GoogleGenAI({ apiKey });
   const modelId = 'gemini-2.5-flash';
 
   let prompt = "";
